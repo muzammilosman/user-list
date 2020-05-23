@@ -6,22 +6,19 @@ import { ApiService } from '../../../common/http/api.service'
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent implements OnInit { 
 
-  users: any
+  usersList: []
 
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    this.users = this.getUsers()
+    this.api.getUsers()
+    this.fetchUsers()
   }
   
-  getUsers() {
-    this.api.getUsers().subscribe(
-      (res) => {
-        return res.results
-      }
-    )
+  fetchUsers() {
+    this.usersList = JSON.parse(localStorage.getItem('users'))
   }
 
 }

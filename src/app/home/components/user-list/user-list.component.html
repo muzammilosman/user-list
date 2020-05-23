@@ -1,3 +1,18 @@
+
+<div class="create-user-section">
+    <button class="btn btn-primary"  [routerLink]="['/home/create-user']">+ ADD USER</button>
+</div>
+
 <div class="user-list-box">
-    {{users}}
+    <div class="user-list-title">
+        <h3>USERS LIST</h3>
+    </div>
+    <div class="user-details" *ngFor="let user of usersList">
+        <div class="user-name">
+            {{user.name.title}} {{user.name.first}} {{user.name.last}}
+        </div>
+        <div class="user-email">
+            {{user.email}}
+        </div> 
+    </div>
 </div>

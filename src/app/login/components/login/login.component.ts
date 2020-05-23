@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service'
 
 @Component({
   selector: 'app-login',
@@ -7,17 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  credentials: Object = {
-    username: String,
-    password: String
-  }
+  username = new FormControl('');
+  password = new FormControl('')
 
-  constructor() { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   login() {
-    console.log(this.credentials)
+    if(this.loginService.userLogin(this.username.value, this.password.value)){
+      this.router.navigate(['/home/users-list'])
+    } else {
+      alert('Invalid Login, username: admin , password: password')
+    }
   }
 }
