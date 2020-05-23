@@ -13,10 +13,11 @@ export class CreateUserComponent implements OnInit {
   userForm = new FormGroup({
     name: new FormGroup({
       title: new FormControl(''),
-      firstName: new FormControl(''),
-      lastName: new FormControl('')
+      first: new FormControl(''),
+      last: new FormControl('')
     }),
     email: new FormControl(''),
+    cell: new FormControl(''),
     username: new FormControl(''),
     password: new FormControl(''),
     dob: new FormControl('')

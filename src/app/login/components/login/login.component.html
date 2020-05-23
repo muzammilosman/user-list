@@ -1,12 +1,18 @@
-<div class="card">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" [formControl]="username" placeholder="Enter email" >
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" [formControl]="password"  placeholder="Password" >
-        </div>
-        <button (click)="login()" class="btn btn-primary">Submit</button>
+<div class="card col-md-4">
+  <div class="card-title">
+    Login
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" [formControl]="username" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" [formControl]="password" placeholder="Password">
+    </div>
+    <div class="submit-btn">
+      <button (click)="login()" class="login-btn btn btn-primary">Submit</button>
+    </div>
+  </div>
 </div>
-
