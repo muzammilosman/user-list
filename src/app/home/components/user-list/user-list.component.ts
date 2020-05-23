@@ -9,7 +9,7 @@ import { ApiService } from '../../../common/http/api.service';
 export class UserListComponent implements OnInit {
 
   usersList: [];
-  search: String = '';
+  search: '';
   searchedUsers: [];
 
   constructor(private api: ApiService) { }
