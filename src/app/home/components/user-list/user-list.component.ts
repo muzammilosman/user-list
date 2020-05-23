@@ -10,7 +10,7 @@ export class UserListComponent implements OnInit {
 
   usersList: [];
   search: '';
-  searchedUsers: [];
+  searchedUsers: Array<any> = [];
 
   constructor(private api: ApiService) { }
 
@@ -28,8 +28,8 @@ export class UserListComponent implements OnInit {
   }
 
   searchUser() {
-    this.searchedUsers = this.usersList.filter( user => {
-      return user.name.first.search(new RegExp(this.search,"i")) != -1
+    this.searchedUsers = this.usersList.filter( (user: any) => {
+      return user.name.first.search(new RegExp(this.search, 'i')) !== -1;
     })
   }
 

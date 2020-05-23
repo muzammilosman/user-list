@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from './../../../common/http/api.service'
+import { ApiService } from './../../../common/http/api.service';
 
 @Component({
   selector: 'app-create-user',
@@ -29,10 +29,10 @@ export class CreateUserComponent implements OnInit {
   }
 
   createUser(event: Event) {
-    event.preventDefault()
-    console.log("User created:", this.userForm.value)
-    this.api.createUser(this.userForm.value)
-    this.router.navigate(['/home/users-list'])
-  } 
+    event.preventDefault();
+    console.log("User created:", this.userForm.value);
+    this.api.createUser(this.userForm.value);
+    this.router.navigate(['/home/users-list']);
+  }
 
 }
